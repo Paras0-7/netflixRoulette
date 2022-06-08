@@ -10,14 +10,16 @@ export const HeroSection = function () {
           <strong>netflix</strong>roulette
         </p>
         <form className={styles.form}>
-          <div>
-            <label htmlFor="movie">Find Your Movie</label>
-            <div>
+          <div className={styles["main-div"]}>
+            <label className={styles.label} htmlFor="movie">
+              Find Your Movie
+            </label>
+            <div className={styles.div1}>
               <input id="movie" />
               <Button className={styles["search-btn"]}>Search</Button>
             </div>
           </div>
-          <div>
+          <div className={styles.div2}>
             <label>Search By</label>
             <div>
               <Button value="title">Title</Button>
