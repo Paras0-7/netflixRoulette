@@ -1,11 +1,12 @@
 import "./App.css";
 import { Footer } from "./components/UI/Footer";
-import { HeroSection } from "./components/SearchPanel/SearchPanel";
+import { Header } from "./components/UI/Header";
+import { SearchPanel } from "./components/SearchPanel/SearchPanel";
 
 function App() {
   return (
     <>
-      <HeroSection />
+      <Header />
       <Footer />
     </>
   );
