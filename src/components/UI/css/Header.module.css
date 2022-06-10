@@ -16,7 +16,8 @@
 }
 
 .searchPanel {
-  margin: 2rem auto;
+  width: 100%;
+  margin: 4rem 16rem;
 }
 .background {
   height: 60vh;
