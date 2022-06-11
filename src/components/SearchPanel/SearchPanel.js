@@ -4,9 +4,14 @@ import { SearchFilter } from "./SearchFilter";
 
 export const SearchPanel = function (props) {
   const classes = `${props.className} ${styles["search-panel"]}`;
+
+  const submitHandler = function (event) {
+    event.preventDefault();
+    console.log("submit");
+  };
   return (
     <section className={classes}>
-      <form className={styles.form}>
+      <form onSubmit={submitHandler} className={styles.form}>
         <label> Find Your Movie</label>
         <div className={styles.input}>
           <input type="text" />
