@@ -7,10 +7,11 @@ const initialState = {
 const reducerFn = function (state, action) {
   if (action.type === "setBtn1Active") {
     return {
-      btn1Active: true,
-      btn2Active: false,
+      btn1: true,
+      btn2: false,
     };
   } else if (action.type === "setBtn2Active") {
+    // console.log("Here");
     return {
       btn1: false,
       btn2: true,
@@ -23,6 +24,8 @@ const reducerFn = function (state, action) {
 export const useButtonState = function () {
   const [state, dispatchFn] = useReducer(reducerFn, initialState);
 
-  console.log(state.btn1);
-  return state;
+  return {
+    state,
+    dispatchFn,
+  };
 };

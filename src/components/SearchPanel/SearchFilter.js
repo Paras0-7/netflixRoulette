@@ -1,16 +1,10 @@
+import { useButtonState } from "../../hooks/buttonStateHook";
 import { Button } from "../UI/Button";
 import styles from "./css/SearchFilter.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { buttonActions } from "../../redux/slices/buttonSlice";
 
 export const SearchFilter = function () {
-  const dispatch = useDispatch();
-  const btn1 = useSelector(function (state) {
-    return state.button.btn1;
-  });
-  const btn2 = useSelector(function (state) {
-    return state.button.btn2;
-  });
+  const { state, dispatchFn } = useButtonState();
+  const { btn1, btn2 } = state;
 
   const btn1Styles = `${styles.actions} ${btn1 ? styles.active : ""} ${
     styles.btn1
@@ -21,9 +15,11 @@ export const SearchFilter = function () {
   const clickHandler = function (event) {
     // console.log(event.target.value);
     if (event.target.id === "1") {
-      dispatch(buttonActions.setBtn1Active());
+      dispatchFn({ type: "setBtn1Active" });
     } else {
-      dispatch(buttonActions.setBtn2Active());
+      dispatchFn({
+        type: "setBtn2Active",
+      });
     }
   };
 
