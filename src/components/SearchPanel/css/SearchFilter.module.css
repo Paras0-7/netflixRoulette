@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .filter p {
@@ -14,8 +14,7 @@
 
 .actions {
   padding: 1.5rem 2rem;
-  text-transform: uppercase;
-  background-color: rgba(153, 153, 153, 0.4);
+  background-color: rgba(153, 153, 153, 0.6);
 }
 
 .active {

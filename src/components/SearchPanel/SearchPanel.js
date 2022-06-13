@@ -7,7 +7,7 @@ export const SearchPanel = function (props) {
 
   const submitHandler = function (event) {
     event.preventDefault();
-    console.log("submit");
+    // console.log("submit");
   };
   return (
     <section className={classes}>
@@ -15,7 +15,9 @@ export const SearchPanel = function (props) {
         <label> Find Your Movie</label>
         <div className={styles.input}>
           <input type="text" />
-          <Button className={styles.btn}>Search</Button>
+          <Button value="title" className={styles.btn}>
+            Search
+          </Button>
         </div>
 
         <SearchFilter />

@@ -4,7 +4,6 @@ import styles from "./css/Header.module.css";
 export const Header = function () {
   return (
     <>
-      <div className={styles.background}></div>
       <div className={styles.header}>
         <div className={styles.heading}>
           <p>
