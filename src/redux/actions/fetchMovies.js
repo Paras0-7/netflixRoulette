@@ -1,9 +1,18 @@
 import { movieActions } from "../slices/moviesSlice";
-export const fetchMovies = function () {
+export const fetchMovies = function (
+  search = "",
+  searchBy,
+  sortBy = "release_date",
+  sortOrder = "desc"
+) {
+  console.log(searchBy);
   return async function (dispatch) {
     const fetchData = async function () {
+      const queries = `${
+        searchBy === "title" ? `search=${search}` : `filter=${search}`
+      }&searchBy=${searchBy}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
       const response = await fetch(
-        "https://reactjs-cdp.herokuapp.com/movies?filter=comedy"
+        `https://reactjs-cdp.herokuapp.com/movies?${queries}`
       );
 
       if (!response.ok) {
@@ -24,8 +33,8 @@ export const fetchMovies = function () {
 
     try {
       let moviesData = await fetchData();
-      // console.log(moviesData);
       moviesData = moviesData.data;
+      // console.log(moviesData);
       const movies = moviesData.map(function (movie) {
         return {
           id: movie.id,

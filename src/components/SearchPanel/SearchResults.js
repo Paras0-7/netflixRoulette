@@ -2,7 +2,7 @@ import { Button } from "../UI/Button";
 import styles from "./css/SearchResults.module.css";
 
 import { useButtonState } from "../../hooks/buttonStateHook";
-
+import { movieActions } from "../../redux/slices/moviesSlice";
 export const SearchResults = function () {
   const { state, dispatchFn } = useButtonState();
   const { btn1, btn2 } = state;

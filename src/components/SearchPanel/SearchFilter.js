@@ -1,10 +1,14 @@
 import { useButtonState } from "../../hooks/buttonStateHook";
 import { Button } from "../UI/Button";
+import { useDispatch } from "react-redux";
 import styles from "./css/SearchFilter.module.css";
+import { movieActions } from "../../redux/slices/moviesSlice";
 
 export const SearchFilter = function () {
   const { state, dispatchFn } = useButtonState();
   const { btn1, btn2 } = state;
+
+  const dispatch = useDispatch();
 
   const btn1Styles = `${styles.actions} ${btn1 ? styles.active : ""} ${
     styles.btn1
@@ -21,6 +25,9 @@ export const SearchFilter = function () {
         type: "setBtn2Active",
       });
     }
+    // console.log(event.target.value);
+    // console.log("here ", event.target.value);
+    dispatch(movieActions.setQuery({ searchBy: event.target.value }));
   };
 
   return (
@@ -37,7 +44,7 @@ export const SearchFilter = function () {
         </Button>
         <Button
           id="2"
-          value="genre"
+          value="genres"
           onClick={clickHandler}
           className={btn2Styles}
         >
