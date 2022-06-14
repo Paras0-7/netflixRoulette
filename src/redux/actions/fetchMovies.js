@@ -15,12 +15,12 @@ export const fetchMovies = function () {
       return data;
     };
 
-    let x = 1;
-    const checkImage = async function (url) {
-      var img = await fetch(url);
-      console.log(x++);
-      console.log(img);
-    };
+    // let x = 1;
+    // const checkImage = async function (url) {
+    //   var img = await fetch(url);
+    //   console.log(x++);
+    //   console.log(img);
+    // };
 
     try {
       let moviesData = await fetchData();
@@ -40,9 +40,9 @@ export const fetchMovies = function () {
         };
       });
 
-      movies.map(async function (movie) {
-        await checkImage(movie.image);
-      });
+      // movies.map(async function (movie) {
+      //   await checkImage(movie.image);
+      // });
 
       dispatch(movieActions.loadMovies(movies));
     } catch (err) {

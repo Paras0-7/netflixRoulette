@@ -1,4 +1,9 @@
 .movies-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+
+  padding: 8rem 4rem;
+  background-color: #232323;
+  width: 100vw;
 }
