@@ -1,0 +1,58 @@
+.movie {
+  display: flex;
+  gap: 5rem;
+  padding: 4rem 7rem;
+  align-items: center;
+}
+
+.movie p {
+  /* color: white !important; */
+}
+
+.movie img {
+  width: 300px;
+  height: 350px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title,
+.date {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+
+  letter-spacing: 1.7px;
+}
+
+.title p {
+  font-size: 5rem;
+  font-weight: lighter;
+}
+
+.rating {
+  padding: 1.5rem;
+  color: green;
+  font-size: 2.5rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: solid 3px white;
+  font-weight: bold !important;
+}
+
+.tagline,
+.overview {
+  font-size: 2rem;
+  letter-spacing: 1.3px;
+}
+.date {
+  color: #f55261;
+  font-size: 2rem;
+  font-weight: bold;
+}

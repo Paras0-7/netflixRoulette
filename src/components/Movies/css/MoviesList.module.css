@@ -7,3 +7,19 @@
   background-color: #232323;
   width: 100vw;
 }
+
+.not-found {
+  background-color: #232323;
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.not-found p {
+  font-size: 4rem;
+  font-weight: lighter;
+  letter-spacing: 1.7px;
+}

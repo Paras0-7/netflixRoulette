@@ -39,3 +39,7 @@
   border-radius: 7px;
   letter-spacing: 1.2px;
 }
+
+.link {
+  text-decoration: none;
+}

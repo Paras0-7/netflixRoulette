@@ -3,14 +3,12 @@
   display: block;
   margin: 0 auto;
   background-image: url(./../../../../public/netflix.png);
-  height: 50vh;
+  height: 70vh;
   padding-top: 3rem;
 }
 .heading {
   margin-left: 7rem;
-}
 
-.header p {
   color: #f55261;
   font-size: 3rem;
 }

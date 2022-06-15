@@ -1,6 +1,6 @@
 import { Button } from "../UI/Button";
 import styles from "./css/SearchResults.module.css";
-import { useDispatch } from "react-redux/es/exports";
+import { useSelector, useDispatch } from "react-redux/es/exports";
 import { useButtonState } from "../../hooks/buttonStateHook";
 import { movieActions } from "../../redux/slices/moviesSlice";
 export const SearchResults = function () {
@@ -8,6 +8,10 @@ export const SearchResults = function () {
   const { state, dispatchFn } = useButtonState();
   const { btn1, btn2 } = state;
   // console.log(btn1, btn2);
+
+  const totalResults = useSelector(function (state) {
+    return state.movies.totalResults;
+  });
 
   const btn1Styles = `${styles.actions} ${btn1 ? styles.active : ""} ${
     styles.btn1
@@ -26,13 +30,13 @@ export const SearchResults = function () {
         type: "setBtn2Active",
       });
     }
-
+    console.log("here");
     dispatch(movieActions.sortBy(event.target.value));
   };
 
   return (
     <div className={styles.results}>
-      <p className={styles.text}>6 Results Found</p>
+      <p className={styles.text}>{totalResults} Results Found</p>
       <div className={styles.sort}>
         <p>Sort By</p>
         <div>

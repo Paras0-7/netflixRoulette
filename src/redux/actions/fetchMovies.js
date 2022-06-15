@@ -5,7 +5,6 @@ export const fetchMovies = function (
   sortBy,
   sortOrder = "desc"
 ) {
-  console.log(searchBy);
   return async function (dispatch) {
     const fetchData = async function () {
       const queries = `${
@@ -34,9 +33,9 @@ export const fetchMovies = function (
     try {
       let moviesData = await fetchData();
       moviesData = moviesData.data;
-      // console.log(moviesData);
+      console.log(moviesData);
       const movies = moviesData.map(function (movie) {
-        console.log(movie.vote_average);
+        // console.log(movie.vote_average);
         return {
           id: movie.id,
           overview: movie.overview,
@@ -45,7 +44,8 @@ export const fetchMovies = function (
           runtime: movie.runtime,
           tagLine: movie.tagline,
           title: movie.title,
-          rating: movie.vote_average,
+          rating: movie.vote_average.toFixed(1),
+
           genres: movie.genres,
         };
       });

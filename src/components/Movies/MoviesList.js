@@ -14,7 +14,14 @@ export const MoviesList = function () {
   return (
     <>
       <SearchResults />
-      <div className={styles["movies-list"]}>{moviesContent}</div>
+      {movies.length > 0 && (
+        <div className={styles["movies-list"]}>{moviesContent}</div>
+      )}
+      {movies.length === 0 && (
+        <div className={styles["not-found"]}>
+          <p>No movies Found</p>
+        </div>
+      )}
     </>
   );
 };

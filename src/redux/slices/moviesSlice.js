@@ -4,6 +4,7 @@ const moviesSlice = createSlice({
   name: "movies",
   initialState: {
     movies: [],
+    movie: {},
     queryState: {
       query: "",
       searchBy: "title",
@@ -22,6 +23,9 @@ const moviesSlice = createSlice({
 
     sortBy(state, action) {
       state.sortBy = action.payload;
+    },
+    loadMovie(state, action) {
+      state.movie = action.payload;
     },
   },
 });
