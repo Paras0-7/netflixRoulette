@@ -8,7 +8,8 @@
   width: 100vw;
 }
 
-.not-found {
+.not-found,
+.loading {
   background-color: #232323;
   width: 100vw;
   height: 40vh;
@@ -18,7 +19,8 @@
   color: white;
 }
 
-.not-found p {
+.not-found p,
+.loading p {
   font-size: 4rem;
   font-weight: lighter;
   letter-spacing: 1.7px;

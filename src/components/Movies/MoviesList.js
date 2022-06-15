@@ -7,17 +7,27 @@ export const MoviesList = function () {
     return state.movies.movies;
   });
 
+  const loading = useSelector(function (state) {
+    return state.movies.isLoading;
+  });
   const moviesContent = movies.map(function (movie) {
     return <Movie key={movie.id} movie={movie} />;
   });
 
+  console.log(loading);
   return (
     <>
       <SearchResults />
-      {movies.length > 0 && (
+
+      {loading && (
+        <div className={styles.loading}>
+          <p>Loading Movies ......</p>
+        </div>
+      )}
+      {!loading && movies.length > 0 && (
         <div className={styles["movies-list"]}>{moviesContent}</div>
       )}
-      {movies.length === 0 && (
+      {!loading && movies.length === 0 && (
         <div className={styles["not-found"]}>
           <p>No movies Found</p>
         </div>

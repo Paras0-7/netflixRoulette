@@ -11,6 +11,7 @@ const moviesSlice = createSlice({
     },
     sortBy: "release_date",
     totalResults: 0,
+    isLoading: false,
   },
   reducers: {
     loadMovies(state, action) {
@@ -26,6 +27,9 @@ const moviesSlice = createSlice({
     },
     loadMovie(state, action) {
       state.movie = action.payload;
+    },
+    setIsLoading(state, action) {
+      state.isLoading = action.payload;
     },
   },
 });
