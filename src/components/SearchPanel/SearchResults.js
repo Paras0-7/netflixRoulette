@@ -1,9 +1,10 @@
 import { Button } from "../UI/Button";
 import styles from "./css/SearchResults.module.css";
-
+import { useDispatch } from "react-redux/es/exports";
 import { useButtonState } from "../../hooks/buttonStateHook";
 import { movieActions } from "../../redux/slices/moviesSlice";
 export const SearchResults = function () {
+  const dispatch = useDispatch();
   const { state, dispatchFn } = useButtonState();
   const { btn1, btn2 } = state;
   // console.log(btn1, btn2);
@@ -25,6 +26,8 @@ export const SearchResults = function () {
         type: "setBtn2Active",
       });
     }
+
+    dispatch(movieActions.sortBy(event.target.value));
   };
 
   return (
@@ -35,7 +38,7 @@ export const SearchResults = function () {
         <div>
           <Button
             id="1"
-            value="date"
+            value="release_date"
             onClick={clickHandler}
             className={btn1Styles}
           >
@@ -43,7 +46,7 @@ export const SearchResults = function () {
           </Button>
           <Button
             id="2"
-            value="rating"
+            value="vote_average"
             onClick={clickHandler}
             className={btn2Styles}
           >

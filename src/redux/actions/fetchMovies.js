@@ -2,7 +2,7 @@ import { movieActions } from "../slices/moviesSlice";
 export const fetchMovies = function (
   search = "",
   searchBy,
-  sortBy = "release_date",
+  sortBy,
   sortOrder = "desc"
 ) {
   console.log(searchBy);
@@ -36,6 +36,7 @@ export const fetchMovies = function (
       moviesData = moviesData.data;
       // console.log(moviesData);
       const movies = moviesData.map(function (movie) {
+        console.log(movie.vote_average);
         return {
           id: movie.id,
           overview: movie.overview,

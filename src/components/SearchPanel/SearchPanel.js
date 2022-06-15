@@ -13,6 +13,9 @@ export const SearchPanel = function (props) {
     return state.movies.queryState;
   });
 
+  const sortBy = useSelector(function (state) {
+    return state.movies.sortBy;
+  });
   const { query, searchBy } = queryState;
 
   const searchQuery = useRef("");
@@ -21,9 +24,9 @@ export const SearchPanel = function (props) {
   useEffect(
     function () {
       // console.log(searchBy);
-      dispatch(fetchMovies(query, searchBy));
+      dispatch(fetchMovies(query, searchBy, sortBy));
     },
-    [dispatch, query, searchBy]
+    [dispatch, query, searchBy, sortBy]
   );
 
   const submitHandler = function (event) {
