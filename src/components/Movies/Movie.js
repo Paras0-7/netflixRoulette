@@ -5,6 +5,7 @@ import { movieActions } from "../../redux/slices/moviesSlice";
 export const Movie = function (props) {
   const dispatch = useDispatch();
   const clickHandler = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     dispatch(movieActions.loadMovie(props.movie));
   };
   return (
