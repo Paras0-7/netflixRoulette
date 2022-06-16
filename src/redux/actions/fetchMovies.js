@@ -31,6 +31,7 @@ export const fetchMovies = function (
     // };
 
     try {
+      dispatch(movieActions.setError(false));
       dispatch(movieActions.setIsLoading(true));
       let moviesData = await fetchData();
       moviesData = moviesData.data;
@@ -55,10 +56,11 @@ export const fetchMovies = function (
       //   await checkImage(movie.image);
       // });
 
-      dispatch(movieActions.setIsLoading(false));
       dispatch(movieActions.loadMovies(movies));
     } catch (err) {
-      console.log(err);
+      dispatch(movieActions.setError(true));
+    } finally {
+      dispatch(movieActions.setIsLoading(false));
     }
   };
 };

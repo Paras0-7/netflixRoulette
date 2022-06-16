@@ -20,4 +20,12 @@
 
 .home {
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon {
+  height: 25px;
+  color: #f55261;
+  margin-right: 80px;
 }
