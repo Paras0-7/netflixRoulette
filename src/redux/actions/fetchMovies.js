@@ -35,7 +35,7 @@ export const fetchMovies = function (
       dispatch(movieActions.setIsLoading(true));
       let moviesData = await fetchData();
       moviesData = moviesData.data;
-      console.log(moviesData);
+      // console.log(moviesData);
       const movies = moviesData.map(function (movie) {
         // console.log(movie.vote_average);
         return {

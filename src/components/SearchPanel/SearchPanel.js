@@ -15,7 +15,7 @@ export const SearchPanel = function (props) {
 
   const submitHandler = function (event) {
     event.preventDefault();
-    console.log("here form submit");
+    // console.log("here form submit");
     dispatch(
       movieActions.setQuery({
         query: searchQuery.current.value,
